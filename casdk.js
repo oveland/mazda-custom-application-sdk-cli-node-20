@@ -69,18 +69,24 @@ var createCustomApplication = function(name, options) {
 	var appValues = {
 		APP_ID: outputName,
 		APP_NAME: name,
-	};
+	}, preventParsing = ['app.png'];
 
 	Object.keys(customApplicationSkeleton).forEach(function(key) {
 
 		var appFn = key,
 			appContent = new Buffer(customApplicationSkeleton[key], 'base64');
 
-		Object.keys(appValues).forEach(function(appKey) {
+		if(preventParsing.indexOf(key) == -1) {
 
-			appContent = appContent.replace('/{' + appKey + '}/g', appValues[appKey]);
+			appContent = appContent.toString();
 
-		});
+			Object.keys(appValues).forEach(function(appKey) {
+
+				appContent = appContent.replace('/{' + appKey + '}/g', appValues[appKey]);
+
+			});
+
+		}
 
 		fs.writeFile(outputLocation + '/' + key, appContent);
 
