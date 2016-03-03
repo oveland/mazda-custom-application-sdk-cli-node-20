@@ -94,7 +94,8 @@ var createCustomApplication = function(name, options) {
 	});
 
 	console.log("Application was successfully created".green);
-	console.log("Hint: Create applications in the folder that is watched by the Simulator and they will instantly appear".grey);
+
+	return true;
 };
 
 
