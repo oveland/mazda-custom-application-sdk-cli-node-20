@@ -52,7 +52,7 @@ var createCustomApplication = function(name, options) {
 	try {
 		if(fs.statSync(outputLocation).isDirectory()) {
 			console.log(('The application ' + outputName + ' already exists').red);
-			console.log(outputLocation.gray);
+			console.log((outputLocation).grey);
 			return false;
 		}
 	} catch(e) {
@@ -60,7 +60,7 @@ var createCustomApplication = function(name, options) {
 	}
 
 	console.log(('Creating application ' + outputName).green);
-	console.log(outputLocation.gray);
+	console.log((outputLocation).grey);
 
 	// create output directory
 	fs.mkdirSync(outputLocation);
@@ -70,6 +70,7 @@ var createCustomApplication = function(name, options) {
 		APP_ID: outputName,
 		APP_NAME: name,
 	}, preventParsing = ['app.png'];
+
 
 	Object.keys(customApplicationSkeleton).forEach(function(key) {
 
@@ -82,7 +83,9 @@ var createCustomApplication = function(name, options) {
 
 			Object.keys(appValues).forEach(function(appKey) {
 
-				appContent = appContent.replace('/\{' + appKey + '\}/g', appValues[appKey]);
+				console.log(appKey);
+
+				appContent = appContent.replace(new RegExp("{" + appKey + "}", "g"), appValues[appKey]);
 
 			});
 
