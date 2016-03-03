@@ -82,7 +82,7 @@ var createCustomApplication = function(name, options) {
 
 			Object.keys(appValues).forEach(function(appKey) {
 
-				appContent = appContent.replace('/{' + appKey + '}/g', appValues[appKey]);
+				appContent = appContent.replace('/\{' + appKey + '\}/g', appValues[appKey]);
 
 			});
 
