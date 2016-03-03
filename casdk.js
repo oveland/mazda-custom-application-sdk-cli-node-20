@@ -83,8 +83,6 @@ var createCustomApplication = function(name, options) {
 
 			Object.keys(appValues).forEach(function(appKey) {
 
-				console.log(appKey);
-
 				appContent = appContent.replace(new RegExp("{" + appKey + "}", "g"), appValues[appKey]);
 
 			});
@@ -94,6 +92,9 @@ var createCustomApplication = function(name, options) {
 		fs.writeFile(outputLocation + '/' + key, appContent);
 
 	});
+
+	console.log("Application was successfully created\n\n".green);
+	console.log("Hint: Create applications in the folder that is watched by the Simulator and they will instantly appear".grey);
 };
 
 
