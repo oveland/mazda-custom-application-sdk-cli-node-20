@@ -45,7 +45,7 @@ var customApplicationSkeleton = {"app.js":"LyoqCiAqIFt7QVBQX05BTUV9XQogKgogKiBAd
 
 var createCustomApplication = function(name, options) {
 
-	var outputDir = (options.ouput || __dirname).replace(/\/$/, ''),
+	var outputDir = (options.ouput || process.cwd()).replace(/\/$/, ''),
 		outputName = 'app.' + name.replace(/\s|-/g, '_'),
 		outputLocation = outputDir + '/' + outputName;
 
