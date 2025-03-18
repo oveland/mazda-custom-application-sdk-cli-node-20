@@ -1,12 +1,12 @@
 {
-  "name": "casdk",
+  "name": "casdk-cli",
   "description": "A CLI application for the Custom Application SDK for the Mazda Infotainment System",
-  "version": "0.1.1457073859026",
-  "homepage": "https://github.com/flyandi/mazda-custom-application-sdk-cli",
-  "author": "flyandi <flyandi@yahoo.com>",
+  "version": "0.0.2",
+  "homepage": "https://github.com/oveland/mazda-custom-application-sdk-cli-node-20",
+  "author": "oveland",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flyandi/mazda-custom-application-sdk-cli"
+    "url": "https://github.com/oveland/mazda-custom-application-sdk-cli-node-20"
   },
   "bin": {
     "casdk": "./casdk.js"
